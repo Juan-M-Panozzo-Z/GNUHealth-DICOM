@@ -12,3 +12,7 @@ To achieve this, it was only necessary to modify one line of the health_orthanc.
 For its operation, 5 Orthanc instances are run on the same server, where only one will have full access to the Orthanc Explorer in order to receive, include or delete the files. Another will have view-only access to the Orthanc explorer. And the other three will serve as a load balancer to deliver the images to the web viewer. 
 
 It is achieved by limiting access to the Orthanc Explorer through the NGINX server configuration, in order to prevent users from being able to load or delete studies.
+
+After creating the .json configuration files, the 5 instances run with a single command:
+
+$ Orthanc /root/Configuration-Balanced-A.json | Orthanc /root/Configuration-Balanced-B.json | Orthanc /root/Configuration-Balanced-C.json | Orthanc /root/Configuration-Admin.json | Orthanc /root/Configuration-Base.json
