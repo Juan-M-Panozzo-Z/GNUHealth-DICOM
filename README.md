@@ -5,7 +5,7 @@ GNU Health is an extraordinary system available at https://www.gnuhealth.org/ , 
 
 In this repo are the files required to open DICOM images directly from GNUHealth in a Dicom Web viewer (in this case Elessar theme for Osimis Viewer https://github.com/Terabuck/Elessar). Osimis Dicom Viewer is used here because it handles the same UUID format as Orthanc, unlike the new Stone viewer that requires the "StudyInstanceUID".
 
-To achieve this, it was only necessary to modify one line of the health_orthanc.py file (originally available in http://hg.savannah.gnu.org/hgweb/health/file/90316fe79c42/tryton/health_orthanc)
+To achieve this, it was necessary to modify one line of the health_orthanc.py file (originally available in http://hg.savannah.gnu.org/hgweb/health/file/90316fe79c42/tryton/health_orthanc)
 
   338 add = "osimis-viewer / app / index.html? Study = {}". Format (self.uuid)
 
